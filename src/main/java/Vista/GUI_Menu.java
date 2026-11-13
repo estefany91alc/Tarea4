@@ -8,14 +8,14 @@ package Vista;
  *
  * @author PC
  */
-public class PanelPortada extends javax.swing.JFrame {
+public class GUI_Menu extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PanelPortada.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_Menu.class.getName());
 
     /**
-     * Creates new form PanelPortada
+     * Creates new form GUI_Menu
      */
-    public PanelPortada() {
+    public GUI_Menu() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class PanelPortada extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new PanelPortada().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new GUI_Menu().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

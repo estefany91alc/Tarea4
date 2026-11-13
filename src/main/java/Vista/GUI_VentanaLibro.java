@@ -8,14 +8,14 @@ package Vista;
  *
  * @author PC
  */
-public class PanelResultados extends javax.swing.JFrame {
+public class GUI_VentanaLibro extends javax.swing.JFrame {
     
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(PanelResultados.class.getName());
+    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_VentanaLibro.class.getName());
 
     /**
-     * Creates new form PanelResultados
+     * Creates new form GUI_VentanaLibro
      */
-    public PanelResultados() {
+    public GUI_VentanaLibro() {
         initComponents();
     }
 
@@ -66,7 +66,7 @@ public class PanelResultados extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new PanelResultados().setVisible(true));
+        java.awt.EventQueue.invokeLater(() -> new GUI_VentanaLibro().setVisible(true));
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

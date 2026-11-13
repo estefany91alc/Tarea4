@@ -35,16 +35,9 @@ public Pagina obtenerPagina(int posicion) {
 
 }//fin obtenerPagina
 
-
     // Devuelve la cantidad de páginas del libro.
     public int getCantidadPaginas() {
         return paginas.size();
     }//fin del metodo getCantidadPaginas() 
 
-    // Recorre las páginas y muestra su contenido.
-    public void mostrarTodasLasPaginas() {
-        for (Pagina pagina : paginas) {
-            System.out.println(pagina.mostrarContenido());
-        }//fin del for 
-    }//fin del metodo mostrarTodasLasPaginas
-} //fin de clase libro
+  } //fin de clase libro

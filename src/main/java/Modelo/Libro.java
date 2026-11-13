@@ -32,8 +32,12 @@ public Pagina obtenerPagina(int posicion) {
     } else {
         return null;
     }//fin else 
-
 }//fin obtenerPagina
+
+    // Método para recorrer y obtener todas las páginas.
+    public ArrayList<Pagina> getPaginas() {
+        return paginas;
+    }//fin de getPaginas
 
     // Devuelve la cantidad de páginas del libro.
     public int getCantidadPaginas() {

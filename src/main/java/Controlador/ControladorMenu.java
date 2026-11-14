@@ -6,6 +6,7 @@ package controlador;
 
 import Modelo.Libro;
 import Vista.GUI_Menu;
+import Vista.GUI_VentanaLibro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -14,22 +15,22 @@ public class ControladorMenu implements ActionListener {
     // Modelo
     private Libro modelo;
     // Vista del menú principal
-    
+
     // Vista
     private GUI_Menu vista;
+    private GUI_VentanaLibro vistaLibro;
 
     // Constructor
     public ControladorMenu() {
 
         modelo = new Libro();
-        
+
         vista = new GUI_Menu();
 
         vista.addMenuListener(this);
 
         // Conectar los botones de la vista con el controlador.
         //vista.addMenuListener(this);
-
     }//fin del constructor
 
     // Método que controla los eventos de los botones.
@@ -43,7 +44,9 @@ public class ControladorMenu implements ActionListener {
             case "INICIO":
                 abrirLibro();
                 break;
-
+            case "VOLVER":
+                volverMenu();
+                break;
             case "SALIR":
                 System.exit(0);
                 break;
@@ -60,11 +63,24 @@ public class ControladorMenu implements ActionListener {
 
     // Método para abrir el libro.
     public void abrirLibro() {
+        vistaLibro = new GUI_VentanaLibro();
+        
+        vistaLibro.addLibroListener(this);
 
-        // Aquí conectaremos la ventana de lectura
-        // cuando creemos su respectiva vista.
+        vistaLibro.setLocationRelativeTo(null);
+        vistaLibro.setVisible(true);
 
+        // Ocultar el menú principal
+        vista.setVisible(false);
     }//fin de abrirLibro
+
+    // Regresar al menú principal.
+    public void volverMenu() {
+        vistaLibro.setVisible(false);
+
+        vista.setLocationRelativeTo(null);
+        vista.setVisible(true);
+    }
 
 }//fin de la clase
 

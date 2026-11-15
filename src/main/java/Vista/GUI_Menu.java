@@ -46,6 +46,7 @@ public class GUI_Menu extends javax.swing.JFrame {
         lblFondo = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 

@@ -25,8 +25,9 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
     public void addLibroListener(ActionListener listener) {
         btnVolver.setActionCommand("VOLVER");
         btnVolver.addActionListener(listener);
-        btnVolver.setActionCommand("VOLVER");
-        btnVolver.addActionListener(listener);
+        
+        btnSiguiente.setActionCommand("SIGUIENTE");
+        btnSiguiente.addActionListener(listener);
     }//fin addLibroListener
 
     // Método para conectar las imágenes con el controlador.
@@ -55,7 +56,12 @@ public void addImagenesListener(MouseListener listener) {
         lblTexto = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
-        iblTitulo = new javax.swing.JLabel();
+        ScrTabla1 = new javax.swing.JScrollPane();
+        txtSimplePresent = new javax.swing.JTextArea();
+        lblExamples = new javax.swing.JLabel();
+        lblWakeup = new javax.swing.JLabel();
+        lblBrushTeeth = new javax.swing.JLabel();
+        lblGoSchool = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -63,11 +69,11 @@ public void addImagenesListener(MouseListener listener) {
         pnlBack.setBackground(new java.awt.Color(153, 204, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTexto.setFont(new java.awt.Font("Perpetua", 1, 36)); // NOI18N
-        lblTexto.setForeground(new java.awt.Color(0, 0, 0));
+        lblTexto.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        lblTexto.setForeground(new java.awt.Color(0, 0, 153));
         lblTexto.setText("Simple Present");
         lblTexto.setToolTipText("");
-        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 102));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -79,24 +85,46 @@ public void addImagenesListener(MouseListener listener) {
         btnSiguiente.setText("Siguiente ");
         pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 130, 30));
 
-        iblTitulo.setBackground(new java.awt.Color(255, 255, 255));
-        iblTitulo.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
-        iblTitulo.setForeground(new java.awt.Color(0, 51, 255));
-        iblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoProvisionalLibro.jpg"))); // NOI18N
-        pnlBack.add(iblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 400, 70));
+        ScrTabla1.setBorder(null);
+        ScrTabla1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        ScrTabla1.setToolTipText("");
+        ScrTabla1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        ScrTabla1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+
+        txtSimplePresent.setColumns(20);
+        txtSimplePresent.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        txtSimplePresent.setRows(5);
+        txtSimplePresent.setText("We use the Simple Present to talk about things\n we do every day and things that happen regurlarly.\n");
+        ScrTabla1.setViewportView(txtSimplePresent);
+
+        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 570, 70));
+
+        lblExamples.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        lblExamples.setForeground(new java.awt.Color(0, 0, 204));
+        lblExamples.setText("Examples: ");
+        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 140, 40));
+
+        lblWakeup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wake-up.png"))); // NOI18N
+        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 320, 270));
+
+        lblBrushTeeth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i-brush-teeth.png"))); // NOI18N
+        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 360, 270));
+
+        lblGoSchool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/go-to-school.png"))); // NOI18N
+        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 360, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(29, 29, 29)
-                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(pnlBack, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 949, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         pack();
@@ -107,10 +135,15 @@ public void addImagenesListener(MouseListener listener) {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrTabla1;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel iblTitulo;
+    private javax.swing.JLabel lblBrushTeeth;
+    private javax.swing.JLabel lblExamples;
+    private javax.swing.JLabel lblGoSchool;
     private javax.swing.JLabel lblTexto;
+    private javax.swing.JLabel lblWakeup;
     private javax.swing.JPanel pnlBack;
+    private javax.swing.JTextArea txtSimplePresent;
     // End of variables declaration//GEN-END:variables
 }

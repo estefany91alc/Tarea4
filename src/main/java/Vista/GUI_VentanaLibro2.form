@@ -131,13 +131,13 @@
         <Component class="javax.swing.JToggleButton" name="tbtnInterrogative">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="99" red="33" type="rgb"/>
+              <Color blue="99" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Segoe UI" size="24" style="2"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="ff" green="66" red="33" type="rgb"/>
+              <Color blue="0" green="99" red="99" type="rgb"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Interrogative"/>
           </Properties>
@@ -168,7 +168,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnSiguiente">
+        <Component class="javax.swing.JButton" name="btnSiguiente2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="99" red="0" type="rgb"/>
@@ -184,7 +184,7 @@
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JButton" name="btnVolver">
+        <Component class="javax.swing.JButton" name="btnVolver2">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="66" green="99" red="ff" type="rgb"/>
@@ -244,7 +244,7 @@
               <Properties>
                 <Property name="editable" type="boolean" value="false"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="ff" green="99" red="0" type="rgb"/>
+                  <Color blue="99" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="columns" type="int" value="20"/>
                 <Property name="rows" type="int" value="5"/>

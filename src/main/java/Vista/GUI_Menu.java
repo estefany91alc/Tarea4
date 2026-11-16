@@ -63,18 +63,23 @@ public void addMenuListener(ActionListener listener) {
         lblLearnEnglish.setText("jLabel1");
         pnlBack.add(lblLearnEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 380, 180));
 
+        btnIncio.setBackground(new java.awt.Color(255, 204, 0));
         btnIncio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnIncio.setForeground(new java.awt.Color(255, 255, 255));
         btnIncio.setText("Inicio");
         pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 180, -1));
 
+        btnInstrucciones.setBackground(new java.awt.Color(51, 153, 255));
         btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInstrucciones.setText("Instrucciones");
         pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 190, 40));
 
+        btnCreditos.setBackground(new java.awt.Color(204, 255, 204));
         btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnCreditos.setText("Creditos");
         pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 180, -1));
 
+        btnSalir.setBackground(new java.awt.Color(255, 102, 102));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("");

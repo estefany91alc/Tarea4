@@ -41,14 +41,18 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
+        pnlBack.setBackground(new java.awt.Color(153, 204, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolver.setText("Volver");
         pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoProvisionalLibro.jpg"))); // NOI18N
-        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
+        lblFondo.setBackground(new java.awt.Color(255, 255, 255));
+        lblFondo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
+        lblFondo.setForeground(new java.awt.Color(0, 51, 255));
+        lblFondo.setText("Simple Present ");
+        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 270, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

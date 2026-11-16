@@ -84,10 +84,6 @@ public void mostrarPanelInterrogative() {
     public void mostrarAfirmativas() {
 
         txtAffirmative.setText("""
-                               AFFIRMATIVE SENTENCES
-                               
-                               We use affirmative sentences to express habits, routines and facts.
-                               
                                STRUCTURE:
                                Subject + Verb + Complement
                                
@@ -114,12 +110,8 @@ public void mostrarPanelInterrogative() {
     public void mostrarNegativas() {
 
         txtNegative.setText("""
-                            NEGATIVE SENTENCES
-                            
-                            We use negative sentences to express things that do not happen or are not true.
-                            
                             STRUCTURE:
-                            Subject + Don't / Doesn't + Base Verb + Complement
+                            Subject + don't / doesn't + Base Verb + Complement
                             
                             EXAMPLES:
                             
@@ -144,10 +136,7 @@ public void mostrarPanelInterrogative() {
     public void mostrarInterrogativas() {
 
         txtInterrogative.setText("""
-                             INTERROGATIVE SENTENCES
-                             
-                             We use interrogative sentences to ask questions.
-                             
+                         
                              STRUCTURE:
                              Do / Does + Subject + Base Verb + Complement?
                              

@@ -56,18 +56,18 @@ public void addImagenesListener(MouseListener listener) {
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         iblTitulo = new javax.swing.JLabel();
-        ScrTabla1 = new javax.swing.JScrollPane();
-        txtAreaSimplePresent = new javax.swing.JTextArea();
-        lblExamples = new javax.swing.JLabel();
-        lblBrushTeeth = new javax.swing.JLabel();
-        lblGoSchool = new javax.swing.JLabel();
-        lblWakeup = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
 
         pnlBack.setBackground(new java.awt.Color(153, 204, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblTexto.setFont(new java.awt.Font("Perpetua", 1, 36)); // NOI18N
+        lblTexto.setForeground(new java.awt.Color(0, 0, 0));
+        lblTexto.setText("Simple Present");
+        lblTexto.setToolTipText("");
+        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
 
         btnVolver.setBackground(new java.awt.Color(255, 255, 102));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -82,31 +82,8 @@ public void addImagenesListener(MouseListener listener) {
         iblTitulo.setBackground(new java.awt.Color(255, 255, 255));
         iblTitulo.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
         iblTitulo.setForeground(new java.awt.Color(0, 51, 255));
-        iblTitulo.setText("Simple Present ");
+        iblTitulo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoProvisionalLibro.jpg"))); // NOI18N
         pnlBack.add(iblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 400, 70));
-
-        txtAreaSimplePresent.setColumns(20);
-        txtAreaSimplePresent.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
-        txtAreaSimplePresent.setLineWrap(true);
-        txtAreaSimplePresent.setRows(5);
-        txtAreaSimplePresent.setText("We use the Simple Present to talk about things we do\n every day and things that happen regularly ");
-        ScrTabla1.setViewportView(txtAreaSimplePresent);
-
-        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 480, 80));
-
-        lblExamples.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        lblExamples.setForeground(new java.awt.Color(0, 51, 255));
-        lblExamples.setText("Examples");
-        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 190, 40));
-
-        lblBrushTeeth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i-brush-teeth.png"))); // NOI18N
-        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 360, 290));
-
-        lblGoSchool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/go-to-school.png"))); // NOI18N
-        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 330, 280));
-
-        lblWakeup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wake-up.png"))); // NOI18N
-        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, 350, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -130,15 +107,10 @@ public void addImagenesListener(MouseListener listener) {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane ScrTabla1;
     private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel iblTitulo;
-    private javax.swing.JLabel lblBrushTeeth;
-    private javax.swing.JLabel lblExamples;
-    private javax.swing.JLabel lblGoSchool;
-    private javax.swing.JLabel lblWakeup;
+    private javax.swing.JLabel lblTexto;
     private javax.swing.JPanel pnlBack;
-    private javax.swing.JTextArea txtAreaSimplePresent;
     // End of variables declaration//GEN-END:variables
 }

@@ -49,7 +49,6 @@ public void addMenuListener(ActionListener listener) {
         pnlBack = new javax.swing.JPanel();
         lblLearnEnglish = new javax.swing.JLabel();
         btnIncio = new javax.swing.JButton();
-        btnAbrirLibro = new javax.swing.JButton();
         btnInstrucciones = new javax.swing.JButton();
         btnCreditos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -69,12 +68,6 @@ public void addMenuListener(ActionListener listener) {
         btnIncio.setForeground(new java.awt.Color(255, 255, 255));
         btnIncio.setText("Inicio");
         pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
-
-        btnAbrirLibro.setBackground(new java.awt.Color(102, 0, 204));
-        btnAbrirLibro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        btnAbrirLibro.setForeground(new java.awt.Color(255, 255, 255));
-        btnAbrirLibro.setText("Libro");
-        pnlBack.add(btnAbrirLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 180, -1));
 
         btnInstrucciones.setBackground(new java.awt.Color(51, 153, 255));
         btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
@@ -123,7 +116,6 @@ public void addMenuListener(ActionListener listener) {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAbrirLibro;
     private javax.swing.JButton btnCreditos;
     private javax.swing.JButton btnIncio;
     private javax.swing.JButton btnInstrucciones;

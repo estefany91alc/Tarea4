@@ -35,6 +35,7 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBack = new javax.swing.JPanel();
+        lblTexto = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
@@ -44,21 +45,27 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
         pnlBack.setBackground(new java.awt.Color(153, 204, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        lblTexto.setFont(new java.awt.Font("Perpetua", 1, 36)); // NOI18N
+        lblTexto.setForeground(new java.awt.Color(0, 0, 0));
+        lblTexto.setText("Simple Present");
+        lblTexto.setToolTipText("");
+        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 50, -1, -1));
+
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolver.setText("Volver");
-        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
+        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 550, -1, -1));
 
         lblFondo.setBackground(new java.awt.Color(255, 255, 255));
         lblFondo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         lblFondo.setForeground(new java.awt.Color(0, 51, 255));
-        lblFondo.setText("Simple Present ");
-        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 270, 70));
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoProvisionalLibro.jpg"))); // NOI18N
+        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 590));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
+            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -75,6 +82,7 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnVolver;
     private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblTexto;
     private javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 }

@@ -75,7 +75,7 @@ public class ControladorMenu implements ActionListener {
         GUI_VentanaLibro vistaLibro = new GUI_VentanaLibro();
 
         // Creamos el controlador del libro.
-        ControladorLibro control = new ControladorLibro(vistaLibro, vista);
+        ControladorLibro control = new ControladorLibro(vistaLibro, vista, this);
 
         // Ocultamos el menú principal.
         vista.setVisible(false);

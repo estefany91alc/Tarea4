@@ -4,6 +4,7 @@
  */
 package Controlador;
 
+import Vista.GUI_Menu;
 import Vista.GUI_VentanaActividad;
 import Vista.GUI_VentanaLibro;
 import Vista.GUI_VentanaLibro2;
@@ -15,18 +16,24 @@ import java.awt.event.ActionListener;
  * @author PC
  */
 public class ControladorLibro2 implements ActionListener {
-    
+
     // Atributo para acceder a la ventana.
     private GUI_VentanaLibro2 vista;
 
+    // Referencias del menú principal.
+    private ControladorMenu controladorMenu;
+    private GUI_Menu vistaMenu;
+
     // Constructor.
-    public ControladorLibro2(GUI_VentanaLibro2 vista) {
+    public ControladorLibro2(GUI_VentanaLibro2 vista, ControladorMenu controladorMenu, GUI_Menu vistaMenu) {
 
         this.vista = vista;
+        this.controladorMenu = controladorMenu;
+        this.vistaMenu = vistaMenu;
 
         // Conectar los botones con el controlador.
-         vista.addNavigationListener(this);
-         vista.addSentencesListener(this);
+        vista.addNavigationListener(this);
+        vista.addSentencesListener(this);
 
     }//fin del constructor
 
@@ -77,14 +84,17 @@ public class ControladorLibro2 implements ActionListener {
     // Abrir la actividad.
     private void siguientePagina() {
 
-        GUI_VentanaActividad actividad = new GUI_VentanaActividad();
+        // Crear el controlador de la actividad.
+        ControladorActividad controladorActividad
+                = new ControladorActividad(controladorMenu, vistaMenu);
 
-        actividad.setLocationRelativeTo(null);
-        actividad.setVisible(true);
-
+        // Cerrar la segunda página del libro.
         vista.dispose();
+
+        // Iniciar la actividad.
+        controladorActividad.iniciar();
 
     }//fin de siguientePagina
 
 }//fin de ControladorLibro2
-   
+

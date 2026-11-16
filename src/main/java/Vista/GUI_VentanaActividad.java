@@ -4,6 +4,7 @@
  */
 package Vista;
 
+
 /**
  *
  * @author PC
@@ -15,7 +16,7 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
      */
     public GUI_VentanaActividad() {
         initComponents();
-        
+
         // Evita cerrar toda la aplicación.
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
@@ -23,9 +24,11 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
     // Conectar los botones con el controlador.
     public void addActividadListener(java.awt.event.ActionListener listener) {
 
+        // Asignar los comandos de los botones.
         btnVolver.setActionCommand("VOLVER");
         btnSiguientePregunta.setActionCommand("SIGUIENTE");
 
+        // Conectar los botones con el controlador.
         btnVolver.addActionListener(listener);
         btnSiguientePregunta.addActionListener(listener);
     }
@@ -33,11 +36,17 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
     // Mostrar la pregunta actual.
     public void mostrarPregunta(String pregunta, int numeroPregunta) {
 
+        // Activar nuevamente el campo de respuesta.
+        txtRespuesta.setEnabled(true);
+
+        // Mostrar el número y el contenido de la pregunta.
         lblPregunta.setText("<html>Pregunta " + numeroPregunta
                 + " de 5:<br>" + pregunta + "</html>");
 
+        // Limpiar la respuesta anterior.
         txtRespuesta.setText("");
 
+        // Restaurar el botón de siguiente pregunta.
         btnSiguientePregunta.setText("Siguiente pregunta");
         btnSiguientePregunta.setActionCommand("SIGUIENTE");
     }
@@ -50,21 +59,30 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
     // Cambiar el botón cuando se terminan las preguntas.
     public void mostrarFinalizar() {
 
+        // Mostrar el mensaje de finalización.
         lblPregunta.setText("¡Has terminado las cinco preguntas!");
 
+        // Limpiar y desactivar el campo de respuesta.
         txtRespuesta.setText("");
         txtRespuesta.setEnabled(false);
 
+        // Cambiar el texto y el comando del botón.
         btnSiguientePregunta.setText("Finalizar");
         btnSiguientePregunta.setActionCommand("FINALIZAR");
     }
 
     // Restaurar la ventana si fuera necesario.
     public void limpiarVentana() {
+
         txtRespuesta.setEnabled(true);
         txtRespuesta.setText("");
+
+        lblPregunta.setText("Pregunta");
+
+        btnSiguientePregunta.setText("Siguiente pregunta");
+        btnSiguientePregunta.setActionCommand("SIGUIENTE");
     }
-    
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -92,7 +110,6 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
         pnlBack.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 260, -1));
 
         btnSiguientePregunta.setText("Siguiente pregunta");
-        btnSiguientePregunta.addActionListener(this::btnSiguientePreguntaActionPerformed);
         pnlBack.add(btnSiguientePregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 140, 30));
 
         btnVolver.setText("Volver");
@@ -114,15 +131,11 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    
-    private void btnSiguientePreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguientePreguntaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnSiguientePreguntaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnSiguientePregunta;
     private javax.swing.JButton btnVolver;

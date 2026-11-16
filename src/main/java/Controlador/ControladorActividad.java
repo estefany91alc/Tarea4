@@ -35,7 +35,7 @@ public class ControladorActividad implements ActionListener {
     private String[] respuestasUsuario;
 
     // Resultados de la actividad
-    private int puntuacion;
+    private int puntuacion = 0;
     private boolean actividadFinalizada = false;
 
     // Constructor
@@ -43,9 +43,7 @@ public class ControladorActividad implements ActionListener {
 
         this.controladorMenu = controladorMenu;
         this.vistaMenu = vistaMenu;
-
-        this.controladorMenu = controladorMenu;
-
+        
         // Crear la actividad.
         modelo = new PaginaActividad(
                 "Simple Present",
@@ -73,7 +71,7 @@ public class ControladorActividad implements ActionListener {
         // Crear la ventana.
         vista = new GUI_VentanaActividad();
 
-        // Conectar los botones.
+        // Conectar los botones con el controlador.
         vista.addActividadListener(this);
     }
 
@@ -99,63 +97,70 @@ public class ControladorActividad implements ActionListener {
         }
     }
 
-    // Mostrar la ventana.
+    // Mostrar la ventana e iniciar la actividad.
     public void iniciar() {
+
+        // Centrar la ventana.
         vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
+
+        // Mostrar la primera pregunta antes de hacer visible la ventana.
         mostrarPregunta();
+
+        // Mostrar la ventana de actividad.
+        vista.setVisible(true);
     }
 
     // Mostrar la pregunta actual.
     private void mostrarPregunta() {
 
-        vista.mostrarPregunta(
-                modelo.getPreguntas()[preguntaActual],
-                preguntaActual + 1
-        );
+        // Comprobar que exista una pregunta para mostrar.
+        if (preguntaActual >= 0
+                && preguntaActual < modelo.getPreguntas().length) {
+
+            System.out.println("Mostrando pregunta: " + (preguntaActual + 1));
+
+            vista.mostrarPregunta(
+                    modelo.getPreguntas()[preguntaActual],
+                    preguntaActual + 1
+            );
+        }
     }
 
     // Guardar respuesta y avanzar.
     private void siguientePregunta() {
 
-        String respuesta = vista.getRespuesta();
+        // Crear el controlador de la actividad.
+        ControladorActividad controladorActividad
+                = new ControladorActividad(controladorMenu, vistaMenu);
 
-        if (respuesta.isEmpty()) {
-            javax.swing.JOptionPane.showMessageDialog(
-                    vista,
-                    "Debes escribir una respuesta."
-            );
-            return;
-        }
+        // Cerrar la ventana del libro.
+        vista.dispose();
 
-        // Guardar la respuesta del usuario.
-        respuestasUsuario[preguntaActual] = respuesta;
-
-        preguntaActual++;
-
-        // Comprobar si quedan preguntas.
-        if (preguntaActual < modelo.getPreguntas().length) {
-
-            mostrarPregunta();
-
-        } else {
-
-            // Mostrar el botón finalizar.
-            vista.mostrarFinalizar();
-        }
+        // Iniciar la actividad.
+        controladorActividad.iniciar();
     }
 
     // Comprobar resultados.
     private void finalizarActividad() {
 
+        // Evitar finalizar la actividad más de una vez.
+        if (actividadFinalizada) {
+            return;
+        }
+
         // Reiniciar la cantidad de respuestas correctas.
         respuestasCorrectas = 0;
+
+        // Obtener las respuestas correctas del modelo.
+        String[] respuestasEsperadas = modelo.getRespuestasCorrectas();
 
         // Comparar las respuestas del usuario con las correctas.
         for (int i = 0; i < respuestasUsuario.length; i++) {
 
-            if (respuestasUsuario[i].equalsIgnoreCase(
-                    modelo.getRespuestasCorrectas()[i])) {
+            // Comprobar que exista una respuesta.
+            if (respuestasUsuario[i] != null
+                    && respuestasUsuario[i].trim().equalsIgnoreCase(
+                            respuestasEsperadas[i].trim())) {
 
                 respuestasCorrectas++;
             }
@@ -168,9 +173,6 @@ public class ControladorActividad implements ActionListener {
         // Indicar que la actividad terminó.
         actividadFinalizada = true;
 
-        // Cerrar la ventana de actividad.
-        vista.dispose();
-
         // Regresar al menú principal.
         volverMenu();
     }
@@ -178,18 +180,12 @@ public class ControladorActividad implements ActionListener {
     // Regresar al menú.
     private void volverMenu() {
 
-        javax.swing.JOptionPane.showMessageDialog(
-                vista,
-                "Regresando al menú principal."
-        );
-
         // Cerrar la ventana de actividad.
         vista.dispose();
 
         // Mostrar nuevamente el menú principal.
         vistaMenu.setLocationRelativeTo(null);
         vistaMenu.setVisible(true);
-
     }
 
     // Obtener la cantidad de respuestas correctas.

@@ -9,6 +9,8 @@ import Vista.GUI_Menu;
 import Vista.GUI_VentanaLibro;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.JOptionPane;
+
 
 public class ControladorMenu implements ActionListener {
 
@@ -44,6 +46,13 @@ public class ControladorMenu implements ActionListener {
             case "INICIO":
                 abrirLibro();
                 break;
+            case "INSTRUCCIONES":
+                mostrarInstrucciones();
+                break;
+            case "CREDITOS":
+                mostrarCreditos();
+                break;
+
             case "VOLVER":
                 volverMenu();
                 break;
@@ -80,7 +89,59 @@ public class ControladorMenu implements ActionListener {
 
         vista.setLocationRelativeTo(null);
         vista.setVisible(true);
-    }
+    }//fin de volver menu 
 
-}//fin de la clase
+    //Metodo mostrarInstrucciones
+    private void mostrarInstrucciones() {
+        // Método para mostrar las instrucciones del juego.
+
+    String instrucciones = "<html>"
+            + "<div style='width:300px; text-align:center;'>"
+            + "<h1 style='color:#3985D6;'>¡BIENVENIDO!</h1>"
+            + "<h2>¿Cómo jugar?</h2>"
+            + "<p>1. ¡Comienza tu Aventura! Toca el Boton de Inicio.</p>"
+            + "<p>2. ¡Descubre cosas Nuevas! Lee la informacion de las páginas educativas.</p>"
+            + "<p>3. ¡Pon a Prieba lo que sabes! Responde las preguntas de cada actividad.</p>"
+            + "<p>4. ¡Sigue Aprendiendo! Tienes un máximo de tres intentos fallidos.</p>"
+            + "<p>5. ¡Recuerda! Consultar tus resultados.</p>"
+            + "<h3>¡Diviértete aprendiendo! </h3>"
+            + "<h4>¡Que comience la Magia! </h4>"
+            + "</div></html>";
+
+    JOptionPane.showMessageDialog( vista, instrucciones, "Instrucciones",
+            JOptionPane.INFORMATION_MESSAGE );
+
+}//fin de mostrarInstrucciones
+       
+    
+    //Metodo mostrarCreditos
+    private void mostrarCreditos() {
+
+        String creditos = "<html>"
+                + "<div style='width:300px; text-align:center;'>"
+                + "<h1 style='color:#8B65C5;'>CRÉDITOS</h1>"
+                + "<h2>English Time</h2>"
+                + "<p>Learn the Simple Present</p>"
+                + "<hr>"
+                + "<p>Universidad de Costa Rica</p>"
+                + "<p>Informatica y Tecnolgia Multimedia</p>"
+                + "<p><b>Profesora:</b></p>"
+                + "<p>Licda. María Fuentes Mazutiel</p>"
+                + "<p><b>Desarrollado por:</b></p>"
+                + "<p>Estefany Alvarado Carranza</p>"
+                + "<p>Oscar Leornardo Perez Munoz</p>"
+                + "<p>Felix Morales Morales</p>"
+                + "<p>Curso: Fundamentos de Programación TM-2100</p>"
+                + "<p>Año: 2026</p>"
+                + "</div></html>";
+
+        JOptionPane.showMessageDialog(vista, creditos, "Créditos",
+                JOptionPane.INFORMATION_MESSAGE);
+
+    }//fin de mostrarCreditos
+    
+}//fin de la clase controlador menu 
+        
+        
+
 

@@ -4,7 +4,10 @@
  */
 package Vista;
 
+import java.awt.Image;
 import java.awt.event.ActionListener;
+import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -17,19 +20,23 @@ public class GUI_Menu extends javax.swing.JFrame {
      */
     public GUI_Menu() {
         initComponents();
-    }
+        }//fin 
 
     // Método para conectar los botones con el controlador.
-    public void addMenuListener(ActionListener listener) {
+public void addMenuListener(ActionListener listener) {
 
-        btnIncio.setActionCommand("INICIO");
-        btnSalir.setActionCommand("SALIR");
+    btnIncio.setActionCommand("INICIO");
+    btnInstrucciones.setActionCommand("INSTRUCCIONES");
+    btnCreditos.setActionCommand("CREDITOS");
+    btnSalir.setActionCommand("SALIR");
 
-        btnIncio.addActionListener(listener);
-        btnSalir.addActionListener(listener);
+    btnIncio.addActionListener(listener);
+    btnInstrucciones.addActionListener(listener);
+    btnCreditos.addActionListener(listener);
+    btnSalir.addActionListener(listener);
 
-    }
-
+}//fin de addMenuListener
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -40,8 +47,10 @@ public class GUI_Menu extends javax.swing.JFrame {
     private void initComponents() {
 
         pnlBack = new javax.swing.JPanel();
-        lblTitulo = new javax.swing.JLabel();
+        lblLearnEnglish = new javax.swing.JLabel();
         btnIncio = new javax.swing.JButton();
+        btnInstrucciones = new javax.swing.JButton();
+        btnCreditos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
         lblFondo = new javax.swing.JLabel();
 
@@ -50,19 +59,26 @@ public class GUI_Menu extends javax.swing.JFrame {
 
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitulo.setFont(new java.awt.Font("Segoe UI", 1, 36)); // NOI18N
-        lblTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        lblTitulo.setText("Simple Present");
-        pnlBack.add(lblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, -1, -1));
+        lblLearnEnglish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/learn_english_transparente_374x156.png"))); // NOI18N
+        lblLearnEnglish.setText("jLabel1");
+        pnlBack.add(lblLearnEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, 380, 180));
 
         btnIncio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnIncio.setText("Inicio");
-        pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 260, 180, -1));
+        pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 180, -1));
+
+        btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnInstrucciones.setText("Instrucciones");
+        pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 350, 190, 40));
+
+        btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnCreditos.setText("Creditos");
+        pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 430, 180, -1));
 
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("");
-        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 320, 180, -1));
+        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 510, 180, -1));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoMenu.gif"))); // NOI18N
         pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -71,11 +87,17 @@ public class GUI_Menu extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         pack();
@@ -86,10 +108,12 @@ public class GUI_Menu extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnCreditos;
     private javax.swing.JButton btnIncio;
+    private javax.swing.JButton btnInstrucciones;
     private javax.swing.JButton btnSalir;
     private javax.swing.JLabel lblFondo;
-    private javax.swing.JLabel lblTitulo;
+    private javax.swing.JLabel lblLearnEnglish;
     private javax.swing.JPanel pnlBack;
     // End of variables declaration//GEN-END:variables
 }

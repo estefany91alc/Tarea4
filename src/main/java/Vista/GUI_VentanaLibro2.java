@@ -19,32 +19,67 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
      * Creates new form VentanaLibro2
      */
     public GUI_VentanaLibro2() {
-        initComponents();
-        txtAffirmative.setLineWrap(true);
-        txtAffirmative.setWrapStyleWord(true);
-        // Mostrar la información de las tres secciones.
-        mostrarAfirmativas();
-        mostrarNegativas();
-        mostrarInterrogativas();
-        mostrarRemember();
 
-        // Personalizar el título principal.
-        lblSimplePresent.setFont(new java.awt.Font(
-                "Georgia", java.awt.Font.BOLD, 30));
+    initComponents();
 
-        // Personalizar el subtítulo.
-        lblSentences.setFont(new java.awt.Font(
-                "Arial", java.awt.Font.BOLD, 24));
+    // Ocultar la información al iniciar la página
 
-        // Personalizar el contenido.
-        txtAffirmative.setFont(new java.awt.Font(
-                "Arial", java.awt.Font.PLAIN, 18));
+    scrAffirmative.setVisible(false);
+    scrNegative.setVisible(false);
+    scrInterrogative.setVisible(false);
 
-        // Permitir que el texto se ajuste al ancho.
-        txtAffirmative.setLineWrap(true);
-        txtAffirmative.setWrapStyleWord(true);
-    }//FIN 
+    // Cargar la información de las tres secciones.
+    mostrarAfirmativas();
+    mostrarNegativas();
+    mostrarInterrogativas();
+    mostrarRemember();
 
+    // Personalizar el título principal.
+    lblSimplePresent.setFont(new java.awt.Font(
+            "Georgia", java.awt.Font.BOLD, 30));
+
+    // Personalizar el subtítulo.
+    lblSentences.setFont(new java.awt.Font(
+            "Arial", java.awt.Font.BOLD, 24));
+
+    // Personalizar el contenido.
+    txtAffirmative.setFont(new java.awt.Font(
+            "Arial", java.awt.Font.PLAIN, 18));
+
+    txtAffirmative.setLineWrap(true);
+    txtAffirmative.setWrapStyleWord(true);
+
+}// FIN DEL CONSTRUCTOR
+    
+    // Mostrar la sección Affirmative.
+public void mostrarPanelAffirmative() {
+
+    scrAffirmative.setVisible(true);
+    scrNegative.setVisible(false);
+    scrInterrogative.setVisible(false);
+
+}
+
+// Mostrar la sección Negative.
+public void mostrarPanelNegative() {
+
+    scrAffirmative.setVisible(false);
+    scrNegative.setVisible(true);
+    scrInterrogative.setVisible(false);
+
+}
+
+// Mostrar la sección Interrogative.
+public void mostrarPanelInterrogative() {
+
+    scrAffirmative.setVisible(false);
+    scrNegative.setVisible(false);
+    scrInterrogative.setVisible(true);
+
+}
+    
+    
+    
 // Método para mostrar las oraciones afirmativas.
     public void mostrarAfirmativas() {
 

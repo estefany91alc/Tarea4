@@ -26,6 +26,7 @@ public class ControladorLibro2 implements ActionListener {
 
         // Conectar los botones con el controlador.
          vista.addNavigationListener(this);
+         vista.addSentencesListener(this);
 
     }//fin del constructor
 
@@ -43,6 +44,18 @@ public class ControladorLibro2 implements ActionListener {
 
             case "SIGUIENTE2":
                 siguientePagina();
+                break;
+
+            case "AFIRMATIVA":
+                vista.mostrarPanelAffirmative();
+                break;
+
+            case "NEGATIVA":
+                vista.mostrarPanelNegative();
+                break;
+
+            case "INTERROGATIVA":
+                vista.mostrarPanelInterrogative();
                 break;
 
         }//fin del switch

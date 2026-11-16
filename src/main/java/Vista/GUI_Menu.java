@@ -67,26 +67,42 @@ public void addMenuListener(ActionListener listener) {
         btnIncio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnIncio.setForeground(new java.awt.Color(255, 255, 255));
         btnIncio.setText("Inicio");
+<<<<<<< HEAD
         pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 180, -1));
+=======
+        pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
+>>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnInstrucciones.setBackground(new java.awt.Color(51, 153, 255));
         btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucciones.setText("Instrucciones");
+<<<<<<< HEAD
         pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, 40));
+=======
+        pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 40));
+>>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnCreditos.setBackground(new java.awt.Color(0, 204, 51));
         btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
         btnCreditos.setText("Creditos");
+<<<<<<< HEAD
         pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
+=======
+        pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 180, -1));
+>>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnSalir.setBackground(new java.awt.Color(255, 102, 102));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("");
+<<<<<<< HEAD
         pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 180, -1));
+=======
+        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 180, -1));
+>>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoMenu.gif"))); // NOI18N
         pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));

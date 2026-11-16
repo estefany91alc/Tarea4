@@ -52,6 +52,7 @@ public void addImagenesListener(MouseListener listener) {
     private void initComponents() {
 
         pnlBack = new javax.swing.JPanel();
+        lblTexto = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         iblTitulo = new javax.swing.JLabel();

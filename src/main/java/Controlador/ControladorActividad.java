@@ -7,6 +7,7 @@ package Controlador;
 import Modelo.PaginaActividad;
 import Vista.GUI_Menu;
 import Vista.GUI_VentanaActividad;
+import Vista.GUI_VentanaResultados;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
@@ -23,6 +24,7 @@ public class ControladorActividad implements ActionListener {
     // Vista
     private GUI_VentanaActividad vista;
     private GUI_Menu vistaMenu;
+    private GUI_VentanaResultados vistaResultados;
 
     // Controlador del menú
     private ControladorMenu controladorMenu;
@@ -195,8 +197,13 @@ public class ControladorActividad implements ActionListener {
         // Indicar que la actividad terminó.
         actividadFinalizada = true;
 
-        // Regresar al menú principal.
-        volverMenu();
+        // Cerrar la ventana de actividad.
+        vista.dispose();
+        
+        // Abrir la ventana de resultados.
+        vistaResultados = new GUI_VentanaResultados();
+        vistaResultados.setLocationRelativeTo(null);
+        vistaResultados.setVisible(true);
     }
 
     // Regresar al menú.

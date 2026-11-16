@@ -26,11 +26,13 @@ public class GUI_Menu extends javax.swing.JFrame {
 public void addMenuListener(ActionListener listener) {
 
     btnIncio.setActionCommand("INICIO");
+    btnAbrirLibro.setActionCommand("ABRIR LIBRO");
     btnInstrucciones.setActionCommand("INSTRUCCIONES");
     btnCreditos.setActionCommand("CREDITOS");
     btnSalir.setActionCommand("SALIR");
-
+    
     btnIncio.addActionListener(listener);
+    btnAbrirLibro.addActionListener(listener);
     btnInstrucciones.addActionListener(listener);
     btnCreditos.addActionListener(listener);
     btnSalir.addActionListener(listener);
@@ -49,6 +51,7 @@ public void addMenuListener(ActionListener listener) {
         pnlBack = new javax.swing.JPanel();
         lblLearnEnglish = new javax.swing.JLabel();
         btnIncio = new javax.swing.JButton();
+        btnAbrirLibro = new javax.swing.JButton();
         btnInstrucciones = new javax.swing.JButton();
         btnCreditos = new javax.swing.JButton();
         btnSalir = new javax.swing.JButton();
@@ -69,24 +72,30 @@ public void addMenuListener(ActionListener listener) {
         btnIncio.setText("Inicio");
         pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
 
+        btnAbrirLibro.setBackground(new java.awt.Color(102, 0, 204));
+        btnAbrirLibro.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnAbrirLibro.setForeground(new java.awt.Color(255, 255, 255));
+        btnAbrirLibro.setText("Libro");
+        pnlBack.add(btnAbrirLibro, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 180, -1));
+
         btnInstrucciones.setBackground(new java.awt.Color(51, 153, 255));
         btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucciones.setText("Instrucciones");
-        pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 340, -1, 40));
+        pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, -1, 40));
 
         btnCreditos.setBackground(new java.awt.Color(0, 204, 51));
         btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
         btnCreditos.setText("Creditos");
-        pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 410, 180, -1));
+        pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 460, 180, -1));
 
         btnSalir.setBackground(new java.awt.Color(255, 102, 102));
         btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("");
-        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 490, 180, -1));
+        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 520, 180, -1));
 
         lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoMenu.gif"))); // NOI18N
         pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -116,6 +125,7 @@ public void addMenuListener(ActionListener listener) {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAbrirLibro;
     private javax.swing.JButton btnCreditos;
     private javax.swing.JButton btnIncio;
     private javax.swing.JButton btnInstrucciones;

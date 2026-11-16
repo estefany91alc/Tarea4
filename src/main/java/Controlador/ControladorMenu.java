@@ -44,6 +44,9 @@ public class ControladorMenu implements ActionListener {
         switch (op) {
 
             case "INICIO":
+                
+                break;
+            case "ABRIR LIBRO":
                 abrirLibro();
                 break;
             case "INSTRUCCIONES":

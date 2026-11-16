@@ -12,9 +12,21 @@ package Modelo;
 // Clase hija que hereda de la clase abstracta Pagina.
 public class PaginaActividad extends Pagina {
 
+    // Arreglos para almacenar las preguntas y respuestas.
+    private String[] preguntas;
+    private String[] respuestasCorrectas;
+
     // Constructor que inicializa los datos utilizando el constructor de la clase padre.
     public PaginaActividad(String titulo, int numeroPagina, String contenido) {
         super(titulo, numeroPagina, contenido);
+    }
+
+    // Constructor que también recibe las preguntas y respuestas.
+    public PaginaActividad(String titulo, int numeroPagina, String contenido,
+            String[] preguntas, String[] respuestasCorrectas) {
+        super(titulo, numeroPagina, contenido);
+        this.preguntas = preguntas;
+        this.respuestasCorrectas = respuestasCorrectas;
     }
 
     // Implementa el método abstracto de Pagina.
@@ -26,5 +38,14 @@ public class PaginaActividad extends Pagina {
                 + "\n\n" + getContenido();
     }
 
-}
+    // Devuelve el arreglo de preguntas.
+    public String[] getPreguntas() {
+        return preguntas;
+    }
 
+    // Devuelve el arreglo de respuestas correctas.
+    public String[] getRespuestasCorrectas() {
+        return respuestasCorrectas;
+    }
+
+}

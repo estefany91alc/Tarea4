@@ -9,16 +9,62 @@ package Vista;
  * @author PC
  */
 public class GUI_VentanaActividad extends javax.swing.JFrame {
-    
-    private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_VentanaActividad.class.getName());
 
     /**
      * Creates new form GUI_VentanaActividad
      */
     public GUI_VentanaActividad() {
         initComponents();
+        
+        // Evita cerrar toda la aplicación.
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
     }
 
+    // Conectar los botones con el controlador.
+    public void addActividadListener(java.awt.event.ActionListener listener) {
+
+        btnVolver.setActionCommand("VOLVER");
+        btnSiguientePregunta.setActionCommand("SIGUIENTE");
+
+        btnVolver.addActionListener(listener);
+        btnSiguientePregunta.addActionListener(listener);
+    }
+
+    // Mostrar la pregunta actual.
+    public void mostrarPregunta(String pregunta, int numeroPregunta) {
+
+        lblPregunta.setText("<html>Pregunta " + numeroPregunta
+                + " de 5:<br>" + pregunta + "</html>");
+
+        txtRespuesta.setText("");
+
+        btnSiguientePregunta.setText("Siguiente pregunta");
+        btnSiguientePregunta.setActionCommand("SIGUIENTE");
+    }
+
+    // Obtener la respuesta escrita por el usuario.
+    public String getRespuesta() {
+        return txtRespuesta.getText().trim();
+    }
+
+    // Cambiar el botón cuando se terminan las preguntas.
+    public void mostrarFinalizar() {
+
+        lblPregunta.setText("¡Has terminado las cinco preguntas!");
+
+        txtRespuesta.setText("");
+        txtRespuesta.setEnabled(false);
+
+        btnSiguientePregunta.setText("Finalizar");
+        btnSiguientePregunta.setActionCommand("FINALIZAR");
+    }
+
+    // Restaurar la ventana si fuera necesario.
+    public void limpiarVentana() {
+        txtRespuesta.setEnabled(true);
+        txtRespuesta.setText("");
+    }
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -28,47 +74,61 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        pnlBack = new javax.swing.JPanel();
+        lblPregunta = new javax.swing.JLabel();
+        txtRespuesta = new javax.swing.JTextField();
+        btnSiguientePregunta = new javax.swing.JButton();
+        btnVolver = new javax.swing.JButton();
+        lblFondo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        lblPregunta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lblPregunta.setForeground(new java.awt.Color(0, 0, 0));
+        lblPregunta.setText("Pregunta");
+        pnlBack.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        pnlBack.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 260, -1));
+
+        btnSiguientePregunta.setText("Siguiente pregunta");
+        btnSiguientePregunta.addActionListener(this::btnSiguientePreguntaActionPerformed);
+        pnlBack.add(btnSiguientePregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 140, 30));
+
+        btnVolver.setText("Volver");
+        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
+
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoProvisionalLibro.jpg"))); // NOI18N
+        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 400, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+    
+    private void btnSiguientePreguntaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSiguientePreguntaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSiguientePreguntaActionPerformed
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GUI_VentanaActividad().setVisible(true));
-    }
-
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnSiguientePregunta;
+    private javax.swing.JButton btnVolver;
+    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel lblPregunta;
+    private javax.swing.JPanel pnlBack;
+    private javax.swing.JTextField txtRespuesta;
     // End of variables declaration//GEN-END:variables
 }

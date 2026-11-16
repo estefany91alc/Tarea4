@@ -52,13 +52,13 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
         lblFondo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
         lblFondo.setForeground(new java.awt.Color(0, 51, 255));
         lblFondo.setText("Simple Present ");
-        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 270, 70));
+        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 270, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 795, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

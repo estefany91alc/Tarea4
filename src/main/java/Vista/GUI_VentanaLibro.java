@@ -67,23 +67,25 @@ public void addImagenesListener(MouseListener listener) {
         setResizable(false);
 
         pnlBack.setBackground(new java.awt.Color(153, 204, 255));
+        pnlBack.setForeground(new java.awt.Color(255, 255, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         lblTexto.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
         lblTexto.setForeground(new java.awt.Color(0, 0, 153));
         lblTexto.setText("Simple Present");
         lblTexto.setToolTipText("");
-        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 60, -1, -1));
+        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
 
-        btnVolver.setBackground(new java.awt.Color(255, 255, 102));
+        btnVolver.setBackground(new java.awt.Color(255, 153, 51));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
-        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 820, 100, 40));
+        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 820, 130, 40));
 
-        btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
+        btnSiguiente.setBackground(new java.awt.Color(0, 153, 255));
         btnSiguiente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSiguiente.setText("Siguiente ");
-        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 130, 30));
+        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 130, 40));
 
         ScrTabla1.setBorder(null);
         ScrTabla1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -91,27 +93,30 @@ public void addImagenesListener(MouseListener listener) {
         ScrTabla1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         ScrTabla1.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
 
+        txtSimplePresent.setEditable(false);
+        txtSimplePresent.setBackground(new java.awt.Color(153, 204, 255));
         txtSimplePresent.setColumns(20);
         txtSimplePresent.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        txtSimplePresent.setForeground(new java.awt.Color(0, 0, 0));
         txtSimplePresent.setRows(5);
         txtSimplePresent.setText("We use the Simple Present to talk about things\n we do every day and things that happen regurlarly.\n");
         ScrTabla1.setViewportView(txtSimplePresent);
 
-        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 150, 570, 70));
+        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 570, 100));
 
-        lblExamples.setFont(new java.awt.Font("Segoe UI", 3, 18)); // NOI18N
+        lblExamples.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblExamples.setForeground(new java.awt.Color(0, 0, 204));
         lblExamples.setText("Examples: ");
-        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 240, 140, 40));
+        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 140, 40));
 
         lblWakeup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wake-up.png"))); // NOI18N
-        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 320, 270));
+        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 320, 270));
 
         lblBrushTeeth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i-brush-teeth.png"))); // NOI18N
-        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 360, 270));
+        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 360, 270));
 
         lblGoSchool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/go-to-school.png"))); // NOI18N
-        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 570, 360, 300));
+        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 580, 360, 300));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

@@ -1,18 +1,16 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
-*/
-
+ */
 package Controlador;
-
 
 /**
  *
  * @author PC
  */
-
 import Vista.GUI_VentanaLibro;
 import Vista.GUI_Menu;
+import Vista.GUI_VentanaLibro2;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseEvent;
@@ -62,6 +60,32 @@ public class ControladorLibro implements ActionListener, MouseListener {
 
     }//fin de actionPerformed
 
+    //metodo siguiente pagina 
+    private void siguientePagina() {
+
+        GUI_VentanaLibro2 vistaLibro2 = new GUI_VentanaLibro2();
+        
+          ControladorLibro2 controlador2 = new ControladorLibro2(vistaLibro2);
+
+        vistaLibro.setVisible(false);
+
+        vistaLibro2.setLocationRelativeTo(null);
+        vistaLibro2.setVisible(true);
+
+        // Creamos el controlador que manejará los botones de la segunda ventana.
+        ControladorLibro2 _ = new ControladorLibro2(vistaLibro2);
+
+        // Ocultamos la primera ventana del libro.
+        vistaLibro.setVisible(false);
+
+        // Centramos la segunda ventana en la pantalla.
+        vistaLibro2.setLocationRelativeTo(null);
+
+        // Mostramos la segunda ventana del libro.
+        vistaLibro2.setVisible(true);
+
+    }//fin de siguientePagina
+
     // Método para mostrar los ejemplos al tocar las imágenes.
     @Override
     public void mouseClicked(MouseEvent e) {
@@ -110,12 +134,10 @@ public class ControladorLibro implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent e) {
     }
 
-    // Método para avanzar a la siguiente página.
-    private void siguientePagina() {
+    // Método para abrir la segunda página del libro.
 
-        JOptionPane.showMessageDialog(vistaLibro,
-                "¡Muy bien! Vamos a la siguiente página.");
-
-    }//fin de siguientePagina
-
+    
+    
+    
+    
 }//fin de la clase

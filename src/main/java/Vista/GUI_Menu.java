@@ -20,23 +20,23 @@ public class GUI_Menu extends javax.swing.JFrame {
      */
     public GUI_Menu() {
         initComponents();
-        }//fin 
+    }//fin 
 
     // Método para conectar los botones con el controlador.
-public void addMenuListener(ActionListener listener) {
+    public void addMenuListener(ActionListener listener) {
 
-    btnIncio.setActionCommand("INICIO");
-    btnInstrucciones.setActionCommand("INSTRUCCIONES");
-    btnCreditos.setActionCommand("CREDITOS");
-    btnSalir.setActionCommand("SALIR");
-    
-    btnIncio.addActionListener(listener);
-    btnInstrucciones.addActionListener(listener);
-    btnCreditos.addActionListener(listener);
-    btnSalir.addActionListener(listener);
+        btnIncio.setActionCommand("INICIO");
+        btnInstrucciones.setActionCommand("INSTRUCCIONES");
+        btnCreditos.setActionCommand("CREDITOS");
+        btnSalir.setActionCommand("SALIR");
 
-}//fin de addMenuListener
-    
+        btnIncio.addActionListener(listener);
+        btnInstrucciones.addActionListener(listener);
+        btnCreditos.addActionListener(listener);
+        btnSalir.addActionListener(listener);
+
+    }//fin de addMenuListener
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -59,52 +59,36 @@ public void addMenuListener(ActionListener listener) {
 
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblLearnEnglish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/learn_english_transparente_374x156.png"))); // NOI18N
+        lblLearnEnglish.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/learn_english_transparente_374x156.png")));
         lblLearnEnglish.setText("jLabel1");
         pnlBack.add(lblLearnEnglish, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 0, 380, 240));
 
         btnIncio.setBackground(new java.awt.Color(255, 204, 0));
-        btnIncio.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnIncio.setFont(new java.awt.Font("Segoe UI", 1, 24));
         btnIncio.setForeground(new java.awt.Color(255, 255, 255));
         btnIncio.setText("Inicio");
-<<<<<<< HEAD
         pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, 180, -1));
-=======
-        pnlBack.add(btnIncio, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 270, 180, -1));
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnInstrucciones.setBackground(new java.awt.Color(51, 153, 255));
-        btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnInstrucciones.setFont(new java.awt.Font("Segoe UI", 1, 24));
         btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucciones.setText("Instrucciones");
-<<<<<<< HEAD
         pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, -1, 40));
-=======
-        pnlBack.add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, -1, 40));
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnCreditos.setBackground(new java.awt.Color(0, 204, 51));
-        btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnCreditos.setFont(new java.awt.Font("Segoe UI", 1, 24));
         btnCreditos.setForeground(new java.awt.Color(255, 255, 255));
         btnCreditos.setText("Creditos");
-<<<<<<< HEAD
         pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 450, 180, -1));
-=======
-        pnlBack.add(btnCreditos, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 390, 180, -1));
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
         btnSalir.setBackground(new java.awt.Color(255, 102, 102));
-        btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        btnSalir.setFont(new java.awt.Font("Segoe UI", 1, 24));
         btnSalir.setForeground(new java.awt.Color(255, 255, 255));
         btnSalir.setText("Salir");
         btnSalir.setToolTipText("");
-<<<<<<< HEAD
         pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 530, 180, -1));
-=======
-        pnlBack.add(btnSalir, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 450, 180, -1));
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
 
-        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoMenu.gif"))); // NOI18N
+        lblFondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fondoMenu.gif")));
         pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

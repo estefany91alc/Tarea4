@@ -76,11 +76,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="150" y="280" width="180" height="-1"/>
-=======
               <AbsoluteConstraints x="130" y="270" width="180" height="-1"/>
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
             </Constraint>
           </Constraints>
         </Component>
@@ -99,11 +96,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="150" y="360" width="-1" height="40"/>
-=======
               <AbsoluteConstraints x="130" y="330" width="-1" height="40"/>
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
             </Constraint>
           </Constraints>
         </Component>
@@ -122,11 +116,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="150" y="450" width="180" height="-1"/>
-=======
               <AbsoluteConstraints x="130" y="390" width="180" height="-1"/>
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
             </Constraint>
           </Constraints>
         </Component>
@@ -146,11 +137,8 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-<<<<<<< HEAD
               <AbsoluteConstraints x="150" y="530" width="180" height="-1"/>
-=======
               <AbsoluteConstraints x="130" y="450" width="180" height="-1"/>
->>>>>>> 815c2d4818a58344f8ee310d141f668b48180a74
             </Constraint>
           </Constraints>
         </Component>

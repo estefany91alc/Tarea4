@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package controlador;
+package Controlador;
 
 import Modelo.Libro;
 import Vista.GUI_Menu;
@@ -52,10 +52,6 @@ public class ControladorMenu implements ActionListener {
             case "CREDITOS":
                 mostrarCreditos();
                 break;
-
-            case "VOLVER":
-                volverMenu();
-                break;
             case "SALIR":
                 System.exit(0);
                 break;
@@ -72,25 +68,22 @@ public class ControladorMenu implements ActionListener {
 
     // Método para abrir el libro.
     public void abrirLibro() {
-        vistaLibro = new GUI_VentanaLibro();
-        
-        vistaLibro.addLibroListener(this);
+        // Inicializamos la vista del libro.
+        GUI_VentanaLibro vistaLibro = new GUI_VentanaLibro();
 
+        // Creamos el controlador del libro.
+        ControladorLibro control = new ControladorLibro(vistaLibro, vista);
+
+        // Ocultamos el menú principal.
+        vista.setVisible(false);
+
+        // Mostramos la ventana del libro.
         vistaLibro.setLocationRelativeTo(null);
         vistaLibro.setVisible(true);
-
-        // Ocultar el menú principal
-        vista.setVisible(false);
+        
     }//fin de abrirLibro
-
-    // Regresar al menú principal.
-    public void volverMenu() {
-        vistaLibro.setVisible(false);
-
-        vista.setLocationRelativeTo(null);
-        vista.setVisible(true);
-    }//fin de volver menu 
-
+    
+    
     //Metodo mostrarInstrucciones
     private void mostrarInstrucciones() {
         // Método para mostrar las instrucciones del juego.
@@ -139,6 +132,7 @@ public class ControladorMenu implements ActionListener {
                 JOptionPane.INFORMATION_MESSAGE);
 
     }//fin de mostrarCreditos
+
     
 }//fin de la clase controlador menu 
         

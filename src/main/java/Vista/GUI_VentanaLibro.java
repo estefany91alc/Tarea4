@@ -4,7 +4,9 @@
  */
 package Vista;
 
+
 import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
 
 /**
  *
@@ -23,7 +25,22 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
     public void addLibroListener(ActionListener listener) {
         btnVolver.setActionCommand("VOLVER");
         btnVolver.addActionListener(listener);
-    }
+        btnVolver.setActionCommand("VOLVER");
+        btnVolver.addActionListener(listener);
+    }//fin addLibroListener
+
+    // Método para conectar las imágenes con el controlador.
+public void addImagenesListener(MouseListener listener) {
+
+    lblWakeup.setName("WAKEUP");
+    lblBrushTeeth.setName("BRUSHTEETH");
+    lblGoSchool.setName("GOSCHOOL");
+
+    lblWakeup.addMouseListener(listener);
+    lblBrushTeeth.addMouseListener(listener);
+    lblGoSchool.addMouseListener(listener);
+
+}//fin de addImagenesListener
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -36,7 +53,14 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
 
         pnlBack = new javax.swing.JPanel();
         btnVolver = new javax.swing.JButton();
-        lblFondo = new javax.swing.JLabel();
+        btnSiguiente = new javax.swing.JButton();
+        iblTitulo = new javax.swing.JLabel();
+        ScrTabla1 = new javax.swing.JScrollPane();
+        txtAreaSimplePresent = new javax.swing.JTextArea();
+        lblExamples = new javax.swing.JLabel();
+        lblBrushTeeth = new javax.swing.JLabel();
+        lblGoSchool = new javax.swing.JLabel();
+        lblWakeup = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -44,25 +68,57 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
         pnlBack.setBackground(new java.awt.Color(153, 204, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnVolver.setBackground(new java.awt.Color(255, 255, 102));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolver.setText("Volver");
-        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 560, -1, -1));
+        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 820, 100, 40));
 
-        lblFondo.setBackground(new java.awt.Color(255, 255, 255));
-        lblFondo.setFont(new java.awt.Font("Segoe UI", 3, 36)); // NOI18N
-        lblFondo.setForeground(new java.awt.Color(0, 51, 255));
-        lblFondo.setText("Simple Present ");
-        pnlBack.add(lblFondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 10, 270, 70));
+        btnSiguiente.setBackground(new java.awt.Color(0, 153, 204));
+        btnSiguiente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSiguiente.setText("Siguiente ");
+        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 130, 30));
+
+        iblTitulo.setBackground(new java.awt.Color(255, 255, 255));
+        iblTitulo.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
+        iblTitulo.setForeground(new java.awt.Color(0, 51, 255));
+        iblTitulo.setText("Simple Present ");
+        pnlBack.add(iblTitulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 30, 400, 70));
+
+        txtAreaSimplePresent.setColumns(20);
+        txtAreaSimplePresent.setFont(new java.awt.Font("Segoe UI", 2, 18)); // NOI18N
+        txtAreaSimplePresent.setLineWrap(true);
+        txtAreaSimplePresent.setRows(5);
+        txtAreaSimplePresent.setText("We use the Simple Present to talk about things we do\n every day and things that happen regularly ");
+        ScrTabla1.setViewportView(txtAreaSimplePresent);
+
+        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 150, 480, 80));
+
+        lblExamples.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
+        lblExamples.setForeground(new java.awt.Color(0, 51, 255));
+        lblExamples.setText("Examples");
+        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 250, 190, 40));
+
+        lblBrushTeeth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i-brush-teeth.png"))); // NOI18N
+        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 360, 290));
+
+        lblGoSchool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/go-to-school.png"))); // NOI18N
+        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 300, 330, 280));
+
+        lblWakeup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wake-up.png"))); // NOI18N
+        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 600, 350, 270));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 895, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -73,8 +129,15 @@ public class GUI_VentanaLibro extends javax.swing.JFrame {
      */
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JScrollPane ScrTabla1;
+    private javax.swing.JButton btnSiguiente;
     private javax.swing.JButton btnVolver;
-    private javax.swing.JLabel lblFondo;
+    private javax.swing.JLabel iblTitulo;
+    private javax.swing.JLabel lblBrushTeeth;
+    private javax.swing.JLabel lblExamples;
+    private javax.swing.JLabel lblGoSchool;
+    private javax.swing.JLabel lblWakeup;
     private javax.swing.JPanel pnlBack;
+    private javax.swing.JTextArea txtAreaSimplePresent;
     // End of variables declaration//GEN-END:variables
 }

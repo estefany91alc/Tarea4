@@ -4,7 +4,6 @@
  */
 package Vista;
 
-
 /**
  *
  * @author PC
@@ -36,19 +35,22 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
     // Mostrar la pregunta actual.
     public void mostrarPregunta(String pregunta, int numeroPregunta) {
 
-        // Activar nuevamente el campo de respuesta.
-        txtRespuesta.setEnabled(true);
+        lblPregunta.setText(
+                "<html>Pregunta " + numeroPregunta
+                + " de 5:<br>" + pregunta + "</html>"
+        );
 
-        // Mostrar el número y el contenido de la pregunta.
-        lblPregunta.setText("<html>Pregunta " + numeroPregunta
-                + " de 5:<br>" + pregunta + "</html>");
-
-        // Limpiar la respuesta anterior.
+        // Limpiar el campo de respuesta.
         txtRespuesta.setText("");
 
-        // Restaurar el botón de siguiente pregunta.
+        // Restaurar el texto del botón.
         btnSiguientePregunta.setText("Siguiente pregunta");
+
+        // Restaurar el comando del botón.
         btnSiguientePregunta.setActionCommand("SIGUIENTE");
+
+        // Habilitar el campo de respuesta.
+        txtRespuesta.setEnabled(true);
     }
 
     // Obtener la respuesta escrita por el usuario.

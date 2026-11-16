@@ -43,7 +43,7 @@ public class ControladorActividad implements ActionListener {
 
         this.controladorMenu = controladorMenu;
         this.vistaMenu = vistaMenu;
-        
+
         // Crear la actividad.
         modelo = new PaginaActividad(
                 "Simple Present",
@@ -129,15 +129,37 @@ public class ControladorActividad implements ActionListener {
     // Guardar respuesta y avanzar.
     private void siguientePregunta() {
 
-        // Crear el controlador de la actividad.
-        ControladorActividad controladorActividad
-                = new ControladorActividad(controladorMenu, vistaMenu);
+        // Obtener la respuesta escrita por el usuario.
+        String respuesta = vista.getRespuesta();
 
-        // Cerrar la ventana del libro.
-        vista.dispose();
+        // Comprobar que no esté vacía.
+        if (respuesta.isEmpty()) {
 
-        // Iniciar la actividad.
-        controladorActividad.iniciar();
+            javax.swing.JOptionPane.showMessageDialog(
+                    vista,
+                    "Debes escribir una respuesta."
+            );
+
+            return;
+        }
+
+        // Guardar la respuesta del usuario.
+        respuestasUsuario[preguntaActual] = respuesta;
+
+        // Avanzar a la siguiente pregunta.
+        preguntaActual++;
+
+        // Comprobar si quedan preguntas.
+        if (preguntaActual < modelo.getPreguntas().length) {
+
+            // Mostrar la siguiente pregunta.
+            mostrarPregunta();
+
+        } else {
+
+            // Mostrar el botón finalizar.
+            vista.mostrarFinalizar();
+        }
     }
 
     // Comprobar resultados.

@@ -302,9 +302,9 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
         tbtnNegativa.setText("Negative ");
         pnlBack.add(tbtnNegativa, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 200, 60));
 
-        tbtnInterrogative.setBackground(new java.awt.Color(51, 153, 255));
+        tbtnInterrogative.setBackground(new java.awt.Color(255, 255, 153));
         tbtnInterrogative.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
-        tbtnInterrogative.setForeground(new java.awt.Color(51, 102, 255));
+        tbtnInterrogative.setForeground(new java.awt.Color(153, 153, 0));
         tbtnInterrogative.setText("Interrogative");
         pnlBack.add(tbtnInterrogative, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 200, 60));
 
@@ -340,7 +340,7 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
         pnlBack.add(scrNegative, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 220, 310));
 
         txtInterrogative.setEditable(false);
-        txtInterrogative.setBackground(new java.awt.Color(0, 153, 255));
+        txtInterrogative.setBackground(new java.awt.Color(255, 255, 153));
         txtInterrogative.setColumns(20);
         txtInterrogative.setRows(5);
         scrInterrogative.setViewportView(txtInterrogative);

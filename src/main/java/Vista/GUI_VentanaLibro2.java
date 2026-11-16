@@ -177,74 +177,16 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
 
     }//fin de addSentencesListener
 
-    // Method to connect navigation buttons with the controller.
-    public void addNavigationListener(ActionListener listener) {
+    // Metodo para conetar los botones 
+public void addNavigationListener(ActionListener listener) {
 
-        btnVolver.setActionCommand("VOLVER2");
-        btnSiguiente.setActionCommand("SIGUIENTE2");
+    btnVolver2.setActionCommand("VOLVER2");
+    btnSiguiente2.setActionCommand("SIGUIENTE2");
 
-        btnVolver.addActionListener(listener);
-        btnSiguiente.addActionListener(listener);
+    btnVolver2.addActionListener(listener);
+    btnSiguiente2.addActionListener(listener);
 
-    }//end of addNavigationListener
-
-    public class ControladorLibro2 implements ActionListener {
-
-        private GUI_VentanaLibro2 vista;
-
-        public ControladorLibro2(GUI_VentanaLibro2 vista) {
-
-            this.vista = vista;
-            this.vista.addNavigationListener(this);
-
-        }//end of constructor
-
-        @Override
-        public void actionPerformed(ActionEvent e) {
-
-            String comando = e.getActionCommand();
-
-            switch (comando) {
-
-                case "VOLVER2":
-                    volverPagina();
-                    break;
-
-                case "SIGUIENTE2":
-                    siguientePagina();
-                    break;
-
-            }//end of switch
-
-        }//end of actionPerformed
-
-        private void volverPagina() {
-
-            GUI_VentanaLibro ventanaAnterior = new GUI_VentanaLibro();
-
-            ventanaAnterior.setLocationRelativeTo(null);
-            ventanaAnterior.setVisible(true);
-
-            vista.dispose();
-
-        }//fin of volverPagina
-
-        // Metodo para siguiente ventana
-        private void siguientePagina() {
-
-            GUI_VentanaActividad ventanaActividad = new GUI_VentanaActividad();
-
-            ventanaActividad.setLocationRelativeTo(null);
-            ventanaActividad.setVisible(true);
-
-            vista.dispose();
-
-        }//fin of siguientePagina
-
-
-
-}//end of class
-
+}//fin 
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -263,8 +205,8 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
         tbtnInterrogative = new javax.swing.JToggleButton();
         scrAffirmative = new javax.swing.JScrollPane();
         txtAffirmative = new javax.swing.JTextArea();
-        btnSiguiente = new javax.swing.JButton();
-        btnVolver = new javax.swing.JButton();
+        btnSiguiente2 = new javax.swing.JButton();
+        btnVolver2 = new javax.swing.JButton();
         scrNegative = new javax.swing.JScrollPane();
         txtNegative = new javax.swing.JTextArea();
         scrInterrogative = new javax.swing.JScrollPane();
@@ -316,16 +258,16 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
 
         pnlBack.add(scrAffirmative, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 240, 310));
 
-        btnSiguiente.setBackground(new java.awt.Color(0, 153, 255));
-        btnSiguiente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnSiguiente.setText("Siguiente");
-        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 130, 30));
+        btnSiguiente2.setBackground(new java.awt.Color(0, 153, 255));
+        btnSiguiente2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSiguiente2.setText("Siguiente");
+        pnlBack.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 130, 30));
 
-        btnVolver.setBackground(new java.awt.Color(255, 153, 102));
-        btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
-        btnVolver.setText("Volver");
-        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 780, 130, 40));
+        btnVolver2.setBackground(new java.awt.Color(255, 153, 102));
+        btnVolver2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnVolver2.setForeground(new java.awt.Color(255, 255, 255));
+        btnVolver2.setText("Volver");
+        pnlBack.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 780, 130, 40));
 
         scrNegative.setEnabled(false);
 
@@ -417,8 +359,8 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnSiguiente;
-    private javax.swing.JButton btnVolver;
+    private javax.swing.JButton btnSiguiente2;
+    private javax.swing.JButton btnVolver2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblSentences;
     private javax.swing.JLabel lblSimplePresent;

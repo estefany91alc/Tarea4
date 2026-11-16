@@ -108,12 +108,17 @@ public class GUI_VentanaActividad extends javax.swing.JFrame {
         lblPregunta.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         lblPregunta.setForeground(new java.awt.Color(0, 0, 0));
         lblPregunta.setText("Pregunta");
-        pnlBack.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 70, -1, -1));
+        pnlBack.add(lblPregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 80, -1, -1));
+
+        txtRespuesta.setBackground(new java.awt.Color(204, 204, 204));
         pnlBack.add(txtRespuesta, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 150, 260, -1));
 
+        btnSiguientePregunta.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnSiguientePregunta.setText("Siguiente pregunta");
-        pnlBack.add(btnSiguientePregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 500, 140, 30));
+        pnlBack.add(btnSiguientePregunta, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 490, 170, 40));
 
+        btnVolver.setBackground(new java.awt.Color(102, 0, 0));
+        btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
         pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 

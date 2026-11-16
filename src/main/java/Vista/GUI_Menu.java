@@ -26,13 +26,11 @@ public class GUI_Menu extends javax.swing.JFrame {
 public void addMenuListener(ActionListener listener) {
 
     btnIncio.setActionCommand("INICIO");
-    btnAbrirLibro.setActionCommand("ABRIR LIBRO");
     btnInstrucciones.setActionCommand("INSTRUCCIONES");
     btnCreditos.setActionCommand("CREDITOS");
     btnSalir.setActionCommand("SALIR");
     
     btnIncio.addActionListener(listener);
-    btnAbrirLibro.addActionListener(listener);
     btnInstrucciones.addActionListener(listener);
     btnCreditos.addActionListener(listener);
     btnSalir.addActionListener(listener);

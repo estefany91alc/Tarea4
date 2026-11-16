@@ -40,26 +40,26 @@ public class ControladorMenu implements ActionListener {
     public void actionPerformed(ActionEvent e) {
 
         String op = e.getActionCommand();
-
+        
         switch (op) {
 
-            case "INICIO":
-                
-                break;
-            case "ABRIR LIBRO":
-                abrirLibro();
-                break;
-            case "INSTRUCCIONES":
-                mostrarInstrucciones();
-                break;
-            case "CREDITOS":
-                mostrarCreditos();
-                break;
-            case "SALIR":
-                System.exit(0);
-                break;
+        case "INICIO":
+            abrirLibro();
+            break;
 
-        }//fin switch
+        case "INSTRUCCIONES":
+            mostrarInstrucciones();
+            break;
+
+        case "CREDITOS":
+            mostrarCreditos();
+            break;
+
+        case "SALIR":
+            System.exit(0);
+            break;
+
+          }//fin switch
 
     }//fin de actionPerformed
 

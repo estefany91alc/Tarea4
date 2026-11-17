@@ -53,7 +53,6 @@ public void addImagenesListener(MouseListener listener) {
     private void initComponents() {
 
         pnlBack = new javax.swing.JPanel();
-        lblTexto = new javax.swing.JLabel();
         btnVolver = new javax.swing.JButton();
         btnSiguiente = new javax.swing.JButton();
         ScrTabla1 = new javax.swing.JScrollPane();
@@ -62,6 +61,7 @@ public void addImagenesListener(MouseListener listener) {
         lblWakeup = new javax.swing.JLabel();
         lblBrushTeeth = new javax.swing.JLabel();
         lblGoSchool = new javax.swing.JLabel();
+        lblSimplePresent = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -70,22 +70,18 @@ public void addImagenesListener(MouseListener listener) {
         pnlBack.setForeground(new java.awt.Color(255, 255, 255));
         pnlBack.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTexto.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
-        lblTexto.setForeground(new java.awt.Color(0, 0, 153));
-        lblTexto.setText("Simple Present");
-        lblTexto.setToolTipText("");
-        pnlBack.add(lblTexto, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 60, -1, -1));
-
         btnVolver.setBackground(new java.awt.Color(255, 153, 51));
         btnVolver.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolver.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver.setText("Volver");
-        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(740, 820, 130, 40));
+        btnVolver.addActionListener(this::btnVolverActionPerformed);
+        pnlBack.add(btnVolver, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 790, 130, 40));
 
         btnSiguiente.setBackground(new java.awt.Color(0, 153, 255));
         btnSiguiente.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSiguiente.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente.setText("Siguiente ");
-        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 60, 130, 40));
+        pnlBack.add(btnSiguiente, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 110, 130, 40));
 
         ScrTabla1.setBorder(null);
         ScrTabla1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
@@ -102,38 +98,47 @@ public void addImagenesListener(MouseListener listener) {
         txtSimplePresent.setText("We use the Simple Present to talk about things\n we do every day and things that happen regurlarly.\n");
         ScrTabla1.setViewportView(txtSimplePresent);
 
-        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 140, 570, 100));
+        pnlBack.add(ScrTabla1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 270, 690, 100));
 
         lblExamples.setFont(new java.awt.Font("Segoe UI", 3, 24)); // NOI18N
         lblExamples.setForeground(new java.awt.Color(0, 0, 204));
         lblExamples.setText("Examples: ");
-        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 140, 40));
+        pnlBack.add(lblExamples, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 340, 150, 80));
 
         lblWakeup.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/wake-up.png"))); // NOI18N
-        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 290, 320, 270));
+        pnlBack.add(lblWakeup, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 410, 330, 360));
 
         lblBrushTeeth.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/i-brush-teeth.png"))); // NOI18N
-        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 290, 360, 270));
+        pnlBack.add(lblBrushTeeth, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 430, 350, 320));
 
         lblGoSchool.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/go-to-school.png"))); // NOI18N
-        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 580, 360, 300));
+        pnlBack.add(lblGoSchool, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 440, 360, 310));
+
+        lblSimplePresent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/simple_present_500.png"))); // NOI18N
+        pnlBack.add(lblSimplePresent, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 30, 560, 360));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBack, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 949, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
                 .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 897, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGap(0, 12, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btnVolverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVolverActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnVolverActionPerformed
 
     /**
      * @param args the command line arguments
@@ -146,7 +151,7 @@ public void addImagenesListener(MouseListener listener) {
     private javax.swing.JLabel lblBrushTeeth;
     private javax.swing.JLabel lblExamples;
     private javax.swing.JLabel lblGoSchool;
-    private javax.swing.JLabel lblTexto;
+    private javax.swing.JLabel lblSimplePresent;
     private javax.swing.JLabel lblWakeup;
     private javax.swing.JPanel pnlBack;
     private javax.swing.JTextArea txtSimplePresent;

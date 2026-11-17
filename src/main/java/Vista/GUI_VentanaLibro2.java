@@ -18,37 +18,94 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
      */
     public GUI_VentanaLibro2() {
 
-    initComponents();
+        initComponents();
 
-    // Ocultar la información al iniciar la página
+        // Ocultar la información al iniciar la página
+        scrAffirmative.setVisible(false);
+        scrNegative.setVisible(false);
+        scrInterrogative.setVisible(false);
 
-    scrAffirmative.setVisible(false);
-    scrNegative.setVisible(false);
-    scrInterrogative.setVisible(false);
+        // Cargar la información de las tres secciones.
+        mostrarAfirmativas();
+        mostrarNegativas();
+        mostrarInterrogativas();
+        mostrarRemember();
 
-    // Cargar la información de las tres secciones.
-    mostrarAfirmativas();
-    mostrarNegativas();
-    mostrarInterrogativas();
-    mostrarRemember();
+        // Personalizar el contenido de las tres secciones.
+        java.awt.Font fuenteContenido = new java.awt.Font(
+                "Georgia", java.awt.Font.PLAIN, 17);
 
-    // Personalizar el título principal.
-    lblSimplePresent.setFont(new java.awt.Font(
-            "Georgia", java.awt.Font.BOLD, 30));
+// Affirmative
+        txtAffirmative.setFont(fuenteContenido);
+        txtAffirmative.setForeground(new java.awt.Color(40, 40, 40));
+        txtAffirmative.setLineWrap(true);
+        txtAffirmative.setWrapStyleWord(true);
+        txtAffirmative.setMargin(new java.awt.Insets(12, 12, 12, 12));
 
-    // Personalizar el subtítulo.
-    lblSentences.setFont(new java.awt.Font(
-            "Arial", java.awt.Font.BOLD, 24));
+// Negative
+        txtNegative.setFont(fuenteContenido);
+        txtNegative.setForeground(new java.awt.Color(40, 40, 40));
+        txtNegative.setLineWrap(true);
+        txtNegative.setWrapStyleWord(true);
+        txtNegative.setMargin(new java.awt.Insets(12, 12, 12, 12));
 
-    // Personalizar el contenido.
-    txtAffirmative.setFont(new java.awt.Font(
-            "Arial", java.awt.Font.PLAIN, 18));
+// Personalizar Interrogative
+        txtInterrogative.setFont(fuenteContenido);
+        txtInterrogative.setForeground(new java.awt.Color(40, 40, 40));
+        txtInterrogative.setLineWrap(true);
+        txtInterrogative.setWrapStyleWord(true);
+        txtInterrogative.setMargin(new java.awt.Insets(12, 12, 12, 12));
 
-    txtAffirmative.setLineWrap(true);
-    txtAffirmative.setWrapStyleWord(true);
+// Personalizar el apartado Remember.
+        txtRemember.setFont(new java.awt.Font(
+                "Comic Sans MS", java.awt.Font.BOLD, 17));
+        txtRemember.setForeground(new java.awt.Color(30, 90, 130));
+        txtRemember.setBackground(new java.awt.Color(223, 245, 255));
 
-}// FIN DEL CONSTRUCTOR
-    
+        txtRemember.setLineWrap(true);
+        txtRemember.setWrapStyleWord(true);
+
+        txtRemember.setMargin(
+                new java.awt.Insets(15, 15, 15, 15));
+
+        // Personalizar los botones de las secciones.
+        java.awt.Color azulCeleste = new java.awt.Color(101, 197, 232);
+        java.awt.Color azulBorde = new java.awt.Color(39, 139, 184);
+
+        java.awt.Font fuenteBotones = new java.awt.Font(
+                "Georgia", java.awt.Font.BOLD, 16);
+
+// Botón Affirmative  cambio de color 
+        tbtnAfirmativa.setBackground(azulCeleste);
+        tbtnAfirmativa.setForeground(java.awt.Color.WHITE);
+        tbtnAfirmativa.setFont(fuenteBotones);
+        tbtnAfirmativa.setBorder(
+                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
+
+// Botón Negative cambio de color 
+        tbtnNegativa.setBackground(azulCeleste);
+        tbtnNegativa.setForeground(java.awt.Color.WHITE);
+        tbtnNegativa.setFont(fuenteBotones);
+        tbtnNegativa.setBorder(
+                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
+
+// Botón Interrogative cambio de color 
+        tbtnInterrogative.setBackground(azulCeleste);
+        tbtnInterrogative.setForeground(java.awt.Color.WHITE);
+        tbtnInterrogative.setFont(fuenteBotones);
+        tbtnInterrogative.setBorder(
+                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
+        
+        // Colores de las áreas de información.
+        java.awt.Color fondoAzul = new java.awt.Color(223, 245, 255);
+
+        txtAffirmative.setBackground(fondoAzul);
+        txtNegative.setBackground(fondoAzul);
+        txtInterrogative.setBackground(fondoAzul);
+
+
+    }// FIN DEL CONSTRUCTOR
+
     // Mostrar la sección Affirmative.
 public void mostrarPanelAffirmative() {
 
@@ -64,8 +121,7 @@ public void mostrarPanelNegative() {
     scrAffirmative.setVisible(false);
     scrNegative.setVisible(true);
     scrInterrogative.setVisible(false);
-
-}
+}//fin 
 
 // Mostrar la sección Interrogative.
 public void mostrarPanelInterrogative() {
@@ -73,8 +129,7 @@ public void mostrarPanelInterrogative() {
     scrAffirmative.setVisible(false);
     scrNegative.setVisible(false);
     scrInterrogative.setVisible(true);
-
-}
+}//fin 
     
     
     
@@ -161,24 +216,24 @@ public void mostrarPanelInterrogative() {
                                 No, she doesn`t/ No, she does not read books
                              
                              5. Do we have homework today?
-                                \u00bfTenemos tarea hoy?   Yes, we do/ Yes, we have homework today 
-                             
-                             """);
-
+                                \u00bfTenemos tarea hoy?   Yes, we do/ Yes, we have homework today """);
     }//fin de mostrarInterrogativas
 
 // Metodo para mostar el panel emember 
     public void mostrarRemember() {
 
         txtRemember.setText(
-                "⭐ REMEMBER! ⭐\n\n"
-                + "✨ Magic rule ✨\n\n"
-                + "Subjects: HE 👦  SHE 👧  IT 🐶\n"
+                " !REMEMBER! \n\n"
+                + "Magic rule \n\n"
+                + "In Questions use: \n"
+                + "Does he/ she/ it!\n\n"  
+                + "Do You/ we/ they!\n\n" 
+                + "Subjects: HE   SHE   IT \n"
                 + "Add -S or -ES to the verb!\n\n"
                 + "Examples:\n"
-                + "He plays soccer ⚽\n"
-                + "She dances 💃\n"
-                + "It sleeps 😴\n\n"
+                + "He plays soccer \n"
+                + "She dances \n"
+                + "It sleeps \n\n"
                 + "Look at the difference!\n"
                 + "I play → He plays!\n"
                 + "I watch → She watches!\n\n"
@@ -246,31 +301,31 @@ public void addNavigationListener(ActionListener listener) {
 
         lblSimplePresent.setFont(new java.awt.Font("Segoe UI", 3, 48)); // NOI18N
         lblSimplePresent.setForeground(new java.awt.Color(0, 51, 255));
-        lblSimplePresent.setText("Simple Present ");
-        pnlBack.add(lblSimplePresent, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 40, 380, 80));
+        lblSimplePresent.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/simple_present_500.png"))); // NOI18N
+        pnlBack.add(lblSimplePresent, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 0, 500, 270));
 
         lblSentences.setFont(new java.awt.Font("Segoe UI", 2, 36)); // NOI18N
         lblSentences.setForeground(new java.awt.Color(0, 51, 204));
         lblSentences.setText("Sentences");
-        pnlBack.add(lblSentences, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 130, 160, 70));
+        pnlBack.add(lblSentences, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 170, 160, 70));
 
         tbtnAfirmativa.setBackground(new java.awt.Color(204, 255, 204));
         tbtnAfirmativa.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         tbtnAfirmativa.setForeground(new java.awt.Color(0, 51, 0));
         tbtnAfirmativa.setText("Affirmative");
-        pnlBack.add(tbtnAfirmativa, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 220, 200, 60));
+        pnlBack.add(tbtnAfirmativa, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 230, 200, 60));
 
         tbtnNegativa.setBackground(new java.awt.Color(255, 204, 204));
         tbtnNegativa.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         tbtnNegativa.setForeground(new java.awt.Color(255, 51, 51));
         tbtnNegativa.setText("Negative ");
-        pnlBack.add(tbtnNegativa, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 220, 200, 60));
+        pnlBack.add(tbtnNegativa, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 230, 200, 60));
 
         tbtnInterrogative.setBackground(new java.awt.Color(255, 255, 153));
         tbtnInterrogative.setFont(new java.awt.Font("Segoe UI", 2, 24)); // NOI18N
         tbtnInterrogative.setForeground(new java.awt.Color(153, 153, 0));
         tbtnInterrogative.setText("Interrogative");
-        pnlBack.add(tbtnInterrogative, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 220, 200, 60));
+        pnlBack.add(tbtnInterrogative, new org.netbeans.lib.awtextra.AbsoluteConstraints(780, 230, 200, 60));
 
         txtAffirmative.setEditable(false);
         txtAffirmative.setBackground(new java.awt.Color(204, 255, 204));
@@ -278,18 +333,19 @@ public void addNavigationListener(ActionListener listener) {
         txtAffirmative.setRows(5);
         scrAffirmative.setViewportView(txtAffirmative);
 
-        pnlBack.add(scrAffirmative, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 300, 240, 310));
+        pnlBack.add(scrAffirmative, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 330, 340));
 
         btnSiguiente2.setBackground(new java.awt.Color(0, 153, 255));
         btnSiguiente2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSiguiente2.setForeground(new java.awt.Color(255, 255, 255));
         btnSiguiente2.setText("Siguiente");
-        pnlBack.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 50, 130, 30));
+        pnlBack.add(btnSiguiente2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 90, 130, 40));
 
         btnVolver2.setBackground(new java.awt.Color(255, 153, 102));
         btnVolver2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         btnVolver2.setForeground(new java.awt.Color(255, 255, 255));
         btnVolver2.setText("Volver");
-        pnlBack.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(670, 780, 130, 40));
+        pnlBack.add(btnVolver2, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 760, 130, 40));
 
         scrNegative.setEnabled(false);
 
@@ -301,7 +357,7 @@ public void addNavigationListener(ActionListener listener) {
         txtNegative.setToolTipText("");
         scrNegative.setViewportView(txtNegative);
 
-        pnlBack.add(scrNegative, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 300, 220, 310));
+        pnlBack.add(scrNegative, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 370, 340));
 
         txtInterrogative.setEditable(false);
         txtInterrogative.setBackground(new java.awt.Color(255, 255, 153));
@@ -309,7 +365,7 @@ public void addNavigationListener(ActionListener listener) {
         txtInterrogative.setRows(5);
         scrInterrogative.setViewportView(txtInterrogative);
 
-        pnlBack.add(scrInterrogative, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 300, 210, 310));
+        pnlBack.add(scrInterrogative, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 310, 340, 340));
 
         pnlRemember.setBackground(new java.awt.Color(153, 153, 255));
 
@@ -323,33 +379,32 @@ public void addNavigationListener(ActionListener listener) {
         pnlRemember.setLayout(pnlRememberLayout);
         pnlRememberLayout.setHorizontalGroup(
             pnlRememberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnlRememberLayout.createSequentialGroup()
-                .addComponent(scrRemember, javax.swing.GroupLayout.PREFERRED_SIZE, 407, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRememberLayout.createSequentialGroup()
+                .addGap(0, 6, Short.MAX_VALUE)
+                .addComponent(scrRemember, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnlRememberLayout.setVerticalGroup(
             pnlRememberLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlRememberLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(scrRemember, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(pnlRememberLayout.createSequentialGroup()
+                .addComponent(scrRemember, javax.swing.GroupLayout.PREFERRED_SIZE, 197, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnlBack.add(pnlRemember, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 640, 400, 180));
+        pnlBack.add(pnlRemember, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 670, 380, 190));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 839, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 1107, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlBack, javax.swing.GroupLayout.DEFAULT_SIZE, 1021, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(pnlBack, javax.swing.GroupLayout.PREFERRED_SIZE, 1096, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();

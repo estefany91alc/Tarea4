@@ -74,36 +74,6 @@ public class GUI_VentanaLibro2 extends javax.swing.JFrame {
 
         java.awt.Font fuenteBotones = new java.awt.Font(
                 "Georgia", java.awt.Font.BOLD, 16);
-
-// Botón Affirmative  cambio de color 
-        tbtnAfirmativa.setBackground(azulCeleste);
-        tbtnAfirmativa.setForeground(java.awt.Color.WHITE);
-        tbtnAfirmativa.setFont(fuenteBotones);
-        tbtnAfirmativa.setBorder(
-                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
-
-// Botón Negative cambio de color 
-        tbtnNegativa.setBackground(azulCeleste);
-        tbtnNegativa.setForeground(java.awt.Color.WHITE);
-        tbtnNegativa.setFont(fuenteBotones);
-        tbtnNegativa.setBorder(
-                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
-
-// Botón Interrogative cambio de color 
-        tbtnInterrogative.setBackground(azulCeleste);
-        tbtnInterrogative.setForeground(java.awt.Color.WHITE);
-        tbtnInterrogative.setFont(fuenteBotones);
-        tbtnInterrogative.setBorder(
-                javax.swing.BorderFactory.createLineBorder(azulBorde, 2));
-        
-        // Colores de las áreas de información.
-        java.awt.Color fondoAzul = new java.awt.Color(223, 245, 255);
-
-        txtAffirmative.setBackground(fondoAzul);
-        txtNegative.setBackground(fondoAzul);
-        txtInterrogative.setBackground(fondoAzul);
-
-
     }// FIN DEL CONSTRUCTOR
 
     // Mostrar la sección Affirmative.

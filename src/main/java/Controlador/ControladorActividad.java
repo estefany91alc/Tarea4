@@ -6,6 +6,7 @@ package Controlador;
 
 import Modelo.PaginaActividad;
 import Vista.GUI_Menu;
+import Vista.GUI_SubventanaResultados;
 import Vista.GUI_VentanaActividad;
 import Vista.GUI_VentanaResultados;
 import java.awt.event.ActionEvent;
@@ -25,6 +26,7 @@ public class ControladorActividad implements ActionListener {
     private GUI_VentanaActividad vista;
     private GUI_Menu vistaMenu;
     private GUI_VentanaResultados vistaResultados;
+    private GUI_SubventanaResultados subventana;
 
     // Controlador del menú
     private ControladorMenu controladorMenu;
@@ -32,6 +34,10 @@ public class ControladorActividad implements ActionListener {
     // Control de preguntas
     private int preguntaActual = 0;
     private int respuestasCorrectas = 0;
+    private int respuestasFallidas = 0;
+
+    //declaracion de la variable que muestra las R incorrectas
+    private String respuestasIncorrectas = "";
 
     // Respuestas del usuario
     private String[] respuestasUsuario;
@@ -95,6 +101,16 @@ public class ControladorActividad implements ActionListener {
 
             case "FINALIZAR":
                 finalizarActividad();
+                break;
+
+            case "MOSTRAR_RESULTADOS":
+                mostrarResultados();
+                break;
+            case "VOLVER_RESULTADOS":
+                subventana.dispose();
+                break;
+            case "VOLVER_MENU":
+                volverMenu();
                 break;
         }
     }
@@ -174,7 +190,8 @@ public class ControladorActividad implements ActionListener {
 
         // Reiniciar la cantidad de respuestas correctas.
         respuestasCorrectas = 0;
-
+        respuestasFallidas = 0;
+        respuestasIncorrectas = "";
         // Obtener las respuestas correctas del modelo.
         String[] respuestasEsperadas = modelo.getRespuestasCorrectas();
 
@@ -187,8 +204,15 @@ public class ControladorActividad implements ActionListener {
                             respuestasEsperadas[i].trim())) {
 
                 respuestasCorrectas++;
-            }
-        }
+            } else {
+
+                respuestasFallidas++;
+                respuestasIncorrectas += "Pregunta" + (i + 1)
+                        + ":" + modelo.getPreguntas()[i]
+                        + "\nRespuesta correcta: "
+                        + respuestasEsperadas[i] + "\n\n";
+            }//fin if
+        }//fin del for
 
         // Calcular la puntuación sobre 100.
         puntuacion = (respuestasCorrectas * 100)
@@ -199,11 +223,25 @@ public class ControladorActividad implements ActionListener {
 
         // Cerrar la ventana de actividad.
         vista.dispose();
-        
+
         // Abrir la ventana de resultados.
         vistaResultados = new GUI_VentanaResultados();
+        vistaResultados.agregarResultadosListener(this);
         vistaResultados.setLocationRelativeTo(null);
         vistaResultados.setVisible(true);
+    }
+
+    private void mostrarResultados() {
+        subventana = new GUI_SubventanaResultados();
+        subventana.mostrarResultados(
+                respuestasCorrectas,
+                respuestasFallidas,
+                respuestasIncorrectas
+        );
+
+        subventana.setLocationRelativeTo(null);
+        subventana.setVisible(true);
+        subventana.addResultadosListener(this);
     }
 
     // Regresar al menú.

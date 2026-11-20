@@ -4,12 +4,14 @@
  */
 package Vista;
 
+import java.awt.event.ActionListener;
+
 /**
  *
  * @author PC
  */
 public class GUI_VentanaResultados extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUI_VentanaResultados.class.getName());
 
     /**
@@ -17,6 +19,18 @@ public class GUI_VentanaResultados extends javax.swing.JFrame {
      */
     public GUI_VentanaResultados() {
         initComponents();
+    }
+
+    // Método que conecta los botones con el controlador
+    public void agregarResultadosListener(ActionListener listener) {
+        
+        //Muestra la subVentana
+        btn_Resultados.setActionCommand("MOSTRAR_RESULTADOS");
+        btn_Resultados.addActionListener(listener);
+            
+        //Regresa al menu principal
+        btn_VolverMenu.setActionCommand("VOLVER_MENU");
+        btn_VolverMenu.addActionListener(listener);
     }
 
     /**
@@ -28,47 +42,75 @@ public class GUI_VentanaResultados extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
+        btn_VolverMenu = new javax.swing.JButton();
+        lbl_texto1 = new javax.swing.JLabel();
+        lbl_texto2 = new javax.swing.JLabel();
+        btn_Resultados = new javax.swing.JButton();
+        lbl_fondo = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
+
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        btn_VolverMenu.setBackground(new java.awt.Color(102, 255, 255));
+        btn_VolverMenu.setFont(new java.awt.Font("Segoe UI Black", 1, 14)); // NOI18N
+        btn_VolverMenu.setText("Volver al Menu");
+        btn_VolverMenu.addActionListener(this::btn_VolverMenuActionPerformed);
+        jPanel1.add(btn_VolverMenu, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 350, 150, 50));
+
+        lbl_texto1.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        lbl_texto1.setText("felicidades\n completaste los ejercisios\n\n");
+        jPanel1.add(lbl_texto1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 190, 330, 50));
+
+        lbl_texto2.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        lbl_texto2.setText("por favor presiona el boton para conocer tus \nresultados");
+        jPanel1.add(lbl_texto2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 400, 40));
+
+        btn_Resultados.setBackground(new java.awt.Color(0, 204, 51));
+        btn_Resultados.setFont(new java.awt.Font("Segoe UI Symbol", 1, 18)); // NOI18N
+        btn_Resultados.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Resultados.setText("Mostrar Resultados");
+        btn_Resultados.setBorder(javax.swing.BorderFactory.createMatteBorder(5, 5, 5, 5, new java.awt.Color(204, 153, 0)));
+        btn_Resultados.addActionListener(this::btn_ResultadosActionPerformed);
+        jPanel1.add(btn_Resultados, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, 190, 60));
+
+        lbl_fondo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/resultado ventana (2).jpg"))); // NOI18N
+        jPanel1.add(lbl_fondo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_ResultadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ResultadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_ResultadosActionPerformed
+
+    private void btn_VolverMenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_VolverMenuActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_VolverMenuActionPerformed
+
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ReflectiveOperationException | javax.swing.UnsupportedLookAndFeelException ex) {
-            logger.log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(() -> new GUI_VentanaResultados().setVisible(true));
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_Resultados;
+    private javax.swing.JButton btn_VolverMenu;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel lbl_fondo;
+    private javax.swing.JLabel lbl_texto1;
+    private javax.swing.JLabel lbl_texto2;
     // End of variables declaration//GEN-END:variables
 }

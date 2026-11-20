@@ -246,9 +246,18 @@ public class ControladorActividad implements ActionListener {
 
     // Regresar al menú.
     private void volverMenu() {
-
         // Cerrar la ventana de actividad.
         vista.dispose();
+
+        // Cerrar la ventana de resultados, si existe.
+        if (vistaResultados != null) {
+            vistaResultados.dispose();
+        }
+
+        // Cerrar la subventana de resultados, si existe.
+        if (subventana != null) {
+            subventana.dispose();
+        }
 
         // Mostrar nuevamente el menú principal.
         vistaMenu.setLocationRelativeTo(null);
